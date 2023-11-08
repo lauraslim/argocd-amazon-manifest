@@ -23,7 +23,7 @@ spec:
     spec: # Pod spec
       containers:
       - name: amazon-container
-        image: lauradocker84/amazon:2
+        image: lauradocker84/amazon:3
         ports:
         - containerPort: 3000
         
