@@ -1,7 +1,7 @@
 node {
     def app
     
-    env.IMAGE = 'laura/amazon'
+    env.IMAGE = 'lauradocker84/amazon'
 
     stage('Clone repository') {
              git branch: 'main', url: 'https://github.com/lauraslim/argocd-amazon-manifest.git'  
@@ -12,7 +12,7 @@ node {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'github-cred', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //script {def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')}
-                        //script  {def IMAGE='laura/amazon'}
+                        //script  {def IMAGE='lauradocker84/amazon'}
                         sh "git config user.email sadialaura84@gmail.com"
                         sh "git config user.name lauraslim"
                         //sh "git switch master"
